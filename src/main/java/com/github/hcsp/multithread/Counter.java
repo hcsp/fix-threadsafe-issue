@@ -3,7 +3,6 @@ package com.github.hcsp.multithread;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Counter {
-//    private int value = 0;
     private AtomicInteger atomValue = new AtomicInteger(0);
 
     public int getValue() {
