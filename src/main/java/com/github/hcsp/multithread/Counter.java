@@ -29,6 +29,5 @@ class Counter {
             lock.unlock();
         }
     }
-
 }
 
