@@ -32,7 +32,7 @@ public class CounterTest {
             future.get();
         }
 
-        Assertions.assertEquals(0, counter.getValue());
+        Assertions.assertEquals(0, counter.getVALUE());
     }
 
     private void safeSleep() {
