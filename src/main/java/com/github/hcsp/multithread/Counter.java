@@ -1,7 +1,10 @@
 package com.github.hcsp.multithread;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Counter {
-    private final Object lock = new Object();
+    Lock lock = new ReentrantLock();
     private int value = 0;
 
     public int getValue() {
@@ -9,17 +12,23 @@ public class Counter {
     }
 
     // 加上一个整数i，并返回加之后的结果
-    public synchronized int addAndGet(int i) {
-        synchronized (lock) {
+    public int addAndGet(int i) {
+        lock.lock();
+        try {
             value += i;
+        } finally {
+            lock.unlock();
         }
         return value;
     }
 
     // 减去一个整数i，并返回减之后的结果
-    public synchronized int minusAndGet(int i) {
-        synchronized (lock) {
+    public int minusAndGet(int i) {
+        lock.lock();
+        try {
             value -= i;
+        } finally {
+            lock.unlock();
         }
         return value;
     }
