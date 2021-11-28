@@ -1,8 +1,5 @@
 package com.github.hcsp.multithread;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 public class Counter {
     private int value = 0;
 
